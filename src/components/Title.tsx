@@ -1,60 +1,56 @@
-import React from "react";
 import Typography from "@material-ui/core/Typography";
-import {makeStyles} from "@material-ui/core/styles";
-import theme from "../themes/theme";
-import {getDirection} from "../localization";
+import { lighten, makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-    root: {
-        width: "100%",
-        height: "120px",
-        display: "flex",
-        justifyContent: "flex-start",
-        position: "relative",
-        marginBottom: 40
+  root: {
+    width: "100%",
+    height: "50px",
+    display: "flex",
+    justifyContent: "flex-start",
+    position: "relative",
+    marginBottom: 20,
+  },
+  title: {
+    position: "relative",
+    "&::before": {
+      content: "''",
+      width: "100%",
+      height: "3px",
+      backgroundColor: lighten("#484848", 0.7),
+      position: "absolute",
+      top: "auto",
+      left: 0,
+      bottom: 0,
+      borderRadius: "100px",
     },
-    title: {
-        margin: "50px 0 0 40px",
-        [theme.breakpoints.down("sm")]: {
-            fontSize: getDirection() === "rtl" ? 33 : 35,
-        },
-        '&::before': {
-            content: "''",
-            width: "150px",
-            height: "5px",
-            backgroundColor: "#e52764",
-            position: "absolute",
-            top: "auto",
-            left: 0,
-            bottom: 0,
-            margin: "30px 0 0 50px",
-            borderRadius: "100px",
-        },
-        '&:hover': {
-            '&::before': {
-                content: "''",
-                width: "180px",
-                height: "5px",
-                backgroundColor: "#e52764",
-                position: "absolute",
-                top: "auto",
-                left: 0,
-                bottom: 0,
-                margin: "30px 0 0 35px",
-                borderRadius: "100px",
-            }
-        }
-    }
+
+    "&::after": {
+      content: "''",
+      width: "60px",
+      height: "3px",
+      backgroundColor: "#534bab",
+      position: "absolute",
+      top: "auto",
+      left: 0,
+      bottom: 0,
+      borderRadius: "100px",
+    },
+  },
 });
 
-function Title({text}:String) {
-    const classes = useStyles()
-    return (
-        <div className={classes.root}>
-        <Typography variant={"h2"} className={classes.title}>{text}</Typography>
-        </div>
+export interface Props {
+  heading: string;
+}
 
-);
+function Title(props: Props) {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <Typography variant={"h1"} className={classes.title}>
+        {props.heading}
+      </Typography>
+    </div>
+  );
 }
 
 export default Title;

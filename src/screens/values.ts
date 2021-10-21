@@ -1,0 +1,56 @@
+export interface MyFormValues {
+  name: string;
+  persianName: string;
+  propertyCode: string;
+  city: string;
+  resourceType: string;
+  website: string;
+  description: string;
+  persianDescription: string;
+  country: string;
+  cityAddress: string;
+  post: string;
+  address: string;
+  persianAddress: string;
+  generalEmail: string;
+  bookingEmail: string;
+  bookingFailEmail: string;
+  generalPhone: string;
+  bookingFailPhone: string;
+  generalFax: string;
+  confirmationFax: string;
+  WBS: boolean;
+  PMS: boolean;
+  currencies: string;
+  bookingTimeOut: string;
+  acceptFullExport: boolean;
+  manualARR: boolean;
+}
+export const initialValues: MyFormValues = {
+  name: "",
+  persianName: "",
+  propertyCode: "",
+  city: "",
+  resourceType: "",
+  website: "",
+  description: "",
+  persianDescription: "",
+  country: "",
+  cityAddress: "",
+  post: "",
+  address: "",
+  persianAddress: "",
+  generalEmail: "",
+  bookingEmail: "",
+  bookingFailEmail: "",
+  generalPhone: "",
+  bookingFailPhone: "",
+  generalFax: "",
+  confirmationFax: "",
+  WBS: false,
+  PMS: false,
+  currencies: "",
+  bookingTimeOut: "",
+  acceptFullExport: false,
+  manualARR: false,
+};

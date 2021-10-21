@@ -1,14 +1,17 @@
+import {lighten} from "@material-ui/core/styles";
+
 const palette = {
     primary: {
         main: "#ffffff",
-        textContent: "#393939",
+        textContent: "#000",
     },
     secondary: {
-        main: "#e6e6e6",
+        main: "#534bab",
+        textContent: lighten("#484848",0.7),
     },
     text: {
-        primary: "#e6e6e6",
-        secondary: "#0a0a1f",
+        primary: lighten("#484848",0.7),
+        secondary: "#000",
     },
 };
 export default palette;
